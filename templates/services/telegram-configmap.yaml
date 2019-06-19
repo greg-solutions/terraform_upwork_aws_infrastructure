@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: telegram-config
+  labels:
+    app: telegram
+data:
+  SPRING_DATA_MONGODB_URI: "mongodb://mongo-0.mongo,mongo-1.mongo,mongo-1.mongo/upwork"
+  BOT_NAME: "GregSolutionsJobListenerBot"
+  BOT_TOKEN: "843031210:AAHqeOjMDaHCnxQI3fMicw_-9VKcZHKi7Dc"

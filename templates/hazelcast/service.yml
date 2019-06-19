@@ -1,0 +1,10 @@
+kind: Service
+metadata:
+  name: SERVICE-NAME
+spec:
+  type: LoadBalancer
+  selector:
+    app: APP-NAME
+  ports:
+    - name: hazelcast
+      port: 5701

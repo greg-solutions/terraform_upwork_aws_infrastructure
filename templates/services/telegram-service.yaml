@@ -1,0 +1,18 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: telegram
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: telegram
+    spec:
+      containers:
+        - name: telegram-service
+          image: 561798357756.dkr.ecr.us-east-1.amazonaws.com/upwork-telegram-manager:latest
+          imagePullPolicy: "IfNotPresent"
+          envFrom:
+            - configMapRef:
+                name: telegram-config

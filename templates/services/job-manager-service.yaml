@@ -1,0 +1,18 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: job-manager
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: job-manager
+    spec:
+      containers:
+        - name: job-manager-service
+          image: 561798357756.dkr.ecr.us-east-1.amazonaws.com/upwork-job-manager:latest
+          imagePullPolicy: "IfNotPresent"
+          envFrom:
+            - configMapRef:
+                name: job-manager-config
