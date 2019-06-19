@@ -11,3 +11,11 @@ provider "aws" {
   region = "us-east-1"
   shared_credentials_file ="./credentials"
 }
+provider "kubernetes" {}
+
+
+resource "kubernetes_namespace" "example" {
+  metadata {
+    name = "my-first-namespace"
+  }
+}
